@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -29,4 +29,29 @@
   </form>
   <span><a href="/"><button class="nav">HOME</button></a><a href="/flights"><button class="nav">ALL FLIGHTS</button></a></span>
 </body>
-</html>
+</html> -->
+
+<%- include('../partials/header') %>
+
+<h1>Add New Flight</h1>
+<form action="/flights" method="POST" autocomplete="off">
+  <div>
+    <label for="">Airline</label>
+    <input type="text" name="" id="">  
+  </div>
+    <div>  
+    <label for="">Airport</label>
+    <input type="text" name="" id=""> </div>
+    <div>
+      <label for="">Flight Number</label>
+      <input type="number" name="" id="">  
+    </div>
+    <div>
+      <label for="">Departure</label>
+      <input type="date" name="" id="">  
+    </div>
+  <div id="submitbutton"><button type="submit" id="">Add Flight</button></div>
+</form>
+<span><a href="/"><button class="nav">HOME</button></a><a href="/flights"><button class="nav">ALL FLIGHTS</button></a></span>
+
+<%- include('../partials/footer') %>
