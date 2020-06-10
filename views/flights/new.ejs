@@ -1,57 +1,26 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Add New Flight</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="/stylesheets/style.css" />
-</head>
-<body>
-  <h1>Add New Flight</h1>
-  <form action="/flights" method="POST" autocomplete="off">
-    <div>
-      <label for="">Airline</label>
-      <input type="text" name="" id="">  
-    </div>
-      <div>  
-      <label for="">Airport</label>
-      <input type="text" name="" id=""> </div>
-      <div>
-        <label for="">Flight Number</label>
-        <input type="number" name="" id="">  
-      </div>
-      <div>
-        <label for="">Departure</label>
-        <input type="date" name="" id="">  
-      </div>
-    <div id="submitbutton"><button type="submit" id="">Add Flight</button></div>
-  </form>
-  <span><a href="/"><button class="nav">HOME</button></a><a href="/flights"><button class="nav">ALL FLIGHTS</button></a></span>
-</body>
-</html> -->
-
 <%- include('../partials/header') %>
 
-<h1>Add New Flight</h1>
-<form action="/flights" method="POST" autocomplete="off">
-  <div>
-    <label for="">Airline</label>
-    <input type="text" name="" id="">  
-  </div>
-    <div>  
-    <label for="">Airport</label>
-    <input type="text" name="" id=""> </div>
-    <div>
+<section>
+  <h1>Add New Flight</h1>
+  <form action="/flights" method="POST" autocomplete="off">
+    <div class="form-group">
+      <label for="">Airline</label>
+      <input type="text" name="" id="" />
+    </div>
+    <div class="form-group">
+      <label for="">Airport</label>
+      <input type="text" name="" id="" />
+    </div>
+    <div class="form-group">
       <label for="">Flight Number</label>
-      <input type="number" name="" id="">  
+      <input type="number" name="" id="" />
     </div>
-    <div>
+    <div class="form-group">
       <label for="">Departure</label>
-      <input type="date" name="" id="">  
+      <input type="date" name="" id="" />
     </div>
-  <div id="submitbutton"><button type="submit" id="">Add Flight</button></div>
-</form>
-<span><a href="/"><button class="nav">HOME</button></a><a href="/flights"><button class="nav">ALL FLIGHTS</button></a></span>
+    <button class="btn btn-primary" type="submit">Add Flight</button>
+  </form>
+</section>
 
 <%- include('../partials/footer') %>
