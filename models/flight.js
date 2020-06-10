@@ -12,10 +12,4 @@ const flightSchema = new Schema({
   }, //how to return the year plus one
 });
 
-function getAll() {
-  return flightSchema;
-}
-
-module.exports = {
-  getAll,
-}
+module.exports = mongoose.model('Flight', flightSchema);
