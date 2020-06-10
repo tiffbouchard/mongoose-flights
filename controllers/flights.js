@@ -7,7 +7,6 @@ module.exports = {
 
 function index(req, res) {
   res.render('flights/index')
-  Flight.getAll()
 }
 
 function newSkill(req, res) {
