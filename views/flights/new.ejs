@@ -4,22 +4,32 @@
   <h1>Add New Flight</h1>
   <form action="/flights" method="POST" autocomplete="off">
     <div class="form-group">
-      <label for="">Airline</label>
-      <input type="text" name="" id="" />
+      <label>Airline</label>
+      <select class="form-control" name="airline">
+        <option value="American">American</option>
+        <option value="Southwest">Southwest</option>
+        <option value="United">United</option>
+      </select>
     </div>
     <div class="form-group">
-      <label for="">Airport</label>
-      <input type="text" name="" id="" />
+      <label>Airport</label>
+      <select class="form-control" name="airport">
+        <option value="AUS">AUS</option>
+        <option value="DFW">DFW</option>
+        <option value="DEN">DEN</option>
+        <option value="LAX">LAX</option>
+        <option value="SAN">SAN</option>
+      </select>
     </div>
     <div class="form-group">
-      <label for="">Flight Number</label>
-      <input type="number" name="" id="" />
+      <label>Flight Number</label>
+      <input class="form-control" type="number" name="flightNo" min="10" />
     </div>
     <div class="form-group">
       <label for="">Departure</label>
-      <input type="date" name="" id="" />
+      <input class="form-control" type="datetime-local" name="departs" />
     </div>
-    <button class="btn btn-primary" type="submit">Add Flight</button>
+    <input class="btn btn-primary" type="submit" value="Add Flight" />
   </form>
 </section>
 
