@@ -4,6 +4,7 @@ module.exports = {
   flightsIndex,
   new: newFlight,
   createFlight,
+  show,
 };
 
 function flightsIndex(req, res) {
@@ -17,13 +18,16 @@ function newFlight(req, res) {
 }
 
 function createFlight(req, res) {
-  const newFlight = new Flight();
-  const dt = newFlight.departs;
-  const departsDate = dt.toISOString().slice(0, 16);
-  res.render("flights/new", { departsDate });
   const flight = new Flight(req.body);
   flight.save(function (err) {
     if (err) return res.render("flights/new");
     res.redirect("/flights");
+  });
+}
+
+// function to show a details on a given flight
+function show(req, res) {
+  Flight.findById(req.params.id, function (err, currentFlight) {
+    res.render("flights/show", { flight: currentFlight });
   });
 }
