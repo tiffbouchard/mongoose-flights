@@ -23,10 +23,34 @@
   </table>
 </section>
 
+<!-- list out the destinations that someone has added -->
+<% if (flight.destinations.length) { %>
+<section>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Airport</th>
+        <th>Arrival</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% flight.destinations.forEach(function(d) { %>
+      <tr>
+        <td><%= d.airport %></td>
+        <td><%= d.arrival %></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</section>
+<% } else { %>
+<section><h4>No Destinations Yet</h4></section>
+<% } %>
+
 <!-- form to enter in destinations for the given flight -->
 <section>
-  <form method="POST" action="flights/<%= flight.id %>/details">
-    <h2>Add Destinations</h2>
+  <form method="POST" action="/flights/<%= flight.id%>/destinations">
+    <h2>Destinations</h2>
     <div class="form-group">
       <label>Destinations</label>
       <select class="form-control" name="airport">
@@ -41,6 +65,7 @@
       <label>Arrival</label>
       <input class="form-control" type="datetime-local" name="arrival" />
     </div>
+    <input class="btn btn-primary" type="submit" value="Add Destination" />
   </form>
 </section>
 
