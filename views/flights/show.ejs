@@ -23,7 +23,39 @@
   </table>
 </section>
 
+<!-- list out tickets for the flight  -->
+<section><h2>Tickets</h2></section>
+<% if (tickets.length) { %>
+<section>
+  <table class="table">
+    <thead>
+      <% tickets.forEach(function(t) { %>
+      <tr>
+        <th>Seat</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= t.seat %></td>
+        <td><%= t.price %></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</section>
+<% } else { %>
+<section><h4>No Tickets Yet</h4></section>
+<% } %>
+<div>
+  <a href="/tickets/new/<%=flight.id%>"
+    ><button class="btn btn-primary">Add Ticket</button></a
+  >
+</div>
+
 <!-- list out the destinations that someone has added -->
+
+<section><h2>Destinations</h2></section>
 <% if (flight.destinations.length) { %>
 <section>
   <table class="table">
@@ -50,7 +82,6 @@
 <!-- form to enter in destinations for the given flight -->
 <section>
   <form method="POST" action="/flights/<%= flight.id%>/destinations">
-    <h2>Destinations</h2>
     <div class="form-group">
       <label>Destinations</label>
       <select class="form-control" name="airport">
